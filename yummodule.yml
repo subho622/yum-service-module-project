@@ -1,0 +1,8 @@
+---
+- name: Install nginx
+  hosts: webservers
+  tasks:
+  - name: Install nginx, don't start
+    yum:
+      name: nginx
+      state: present
