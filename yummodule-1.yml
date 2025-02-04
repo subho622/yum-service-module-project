@@ -1,11 +1,11 @@
 ---
-- name: Install pkgs
+- name: UnInstall pkgs
   hosts: webservers
   tasks:
-  - name: Install multiple pkgs
+  - name: UnInstall multiple pkgs
     yum:
       name: "{{packages}}"
-      state: present
+      state: absent
     vars:
       packages:
         - nginx
