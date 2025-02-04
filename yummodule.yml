@@ -5,4 +5,4 @@
   - name: Install nginx, don't start
     yum:
       name: nginx
-      state: present
+      state: absent
