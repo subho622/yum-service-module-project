@@ -1,8 +1,12 @@
 ---
 - name: Install nginx
   hosts: webservers
+  vars:
+    pkgs:
+      - nginx
+      - telnet
   tasks:
-  - name: Install nginx, don't start
+  - name: Install multiple packages
     yum:
-      name: nginx
-      state: absent
+      name: "{{pkgs}}"
+      state: present
