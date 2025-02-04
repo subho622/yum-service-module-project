@@ -12,6 +12,7 @@
 
   - name: start nginx
     service:
-      name: "{{pkgs}}"
+      name: "{{items}}"
       state: started
       enabled: yes
+    loop: "{{pkgs}}"
