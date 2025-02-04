@@ -1,12 +1,10 @@
 ---
-- name: UnInstall pkgs
+- name: Download nginx pkg
   hosts: webservers
   tasks:
-  - name: UnInstall multiple pkgs
+  - name: Download nginx pkgs
     yum:
-      name: "{{packages}}"
-      state: absent
-    vars:
-      packages:
-        - nginx
-        - telnet
+      name: nginx
+      state: latest
+      download_only: yes
+      download_dir: /opt
