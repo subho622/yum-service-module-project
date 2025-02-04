@@ -1,0 +1,12 @@
+---
+- name: Install pkgs
+  hosts: webservers
+  tasks:
+  - name: Install multiple pkgs
+    yum:
+      name: "{{packages}}"
+      state: present
+    vars:
+      packages:
+        - nginx
+        - telnet
