@@ -4,9 +4,14 @@
   vars:
     pkgs:
       - nginx
-      - telnet
   tasks:
   - name: Install multiple packages
     yum:
       name: "{{pkgs}}"
       state: present
+
+  - name: start nginx
+    service:
+      name: "{{pkgs}}"
+      state: started
+      enabled: yes
